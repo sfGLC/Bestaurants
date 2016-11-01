@@ -103,30 +103,30 @@ Public NotInheritable Class cmdRestaurantsViewer
         Try
 
             'TODO: Add cmdRestaurantsViewer.OnClick implementation
-        Dim pRestaurantsViewer As New frmRestaurantsViewer
+            Dim pRestaurantsViewer As New frmRestaurantsViewer
 
-        pRestaurantsViewer.ArcMapApplication = m_application
+            pRestaurantsViewer.ArcMapApplication = m_application
 
-        Dim pArcMapApplication As New ArcMapWrapper
+            Dim pArcMapApplication As New ArcMapWrapper
             pArcMapApplication.ArcMapApplication = m_application
 
-        'show the form
+            'show the form
             pRestaurantsViewer.Show(pArcMapApplication)
 
-        'Iapplication -> Imxdocument -> Imap ->Ilayer
-        Dim pMxDoc As IMxDocument = m_application.Document
-        'get the map from the document
-        Dim pMap As IMap = pMxDoc.FocusMap
-        'get the first layer
-        'Dim pLayer As ILayer = pMap.Layer(0)
-        'add the layer to the combo box
-        'pRestaurantsViewer.cmbLayers.Items.Add(pLayer.Name)
+            'Iapplication -> Imxdocument -> Imap ->Ilayer
+            Dim pMxDoc As IMxDocument = m_application.Document
+            'get the map from the document
+            Dim pMap As IMap = pMxDoc.FocusMap
+            'get the first layer
+            'Dim pLayer As ILayer = pMap.Layer(0)
+            'add the layer to the combo box
+            'pRestaurantsViewer.cmbLayers.Items.Add(pLayer.Name)
 
 
-        For i As Integer = 0 To pMap.LayerCount - 1
-            Dim pLayer As ILayer = pMap.Layer(i)
-            pRestaurantsViewer.cmbLayers.Items.Add(pLayer.Name)
-        Next
+            For i As Integer = 0 To pMap.LayerCount - 1
+                Dim pLayer As ILayer = pMap.Layer(i)
+                pRestaurantsViewer.cmbLayers.Items.Add(pLayer.Name)
+            Next
 
         Catch ex As Exception
             MsgBox(ex.ToString)
