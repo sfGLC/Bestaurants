@@ -31,6 +31,8 @@ Partial Class frmRestaurantsViewer
         Me.btnLounges = New System.Windows.Forms.Button()
         Me.btnDiners = New System.Windows.Forms.Button()
         Me.btnCafes = New System.Windows.Forms.Button()
+        Me.cmbVenues = New System.Windows.Forms.ComboBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'cmbLayers
@@ -39,7 +41,7 @@ Partial Class frmRestaurantsViewer
         Me.cmbLayers.FormattingEnabled = True
         Me.cmbLayers.Location = New System.Drawing.Point(101, 40)
         Me.cmbLayers.Name = "cmbLayers"
-        Me.cmbLayers.Size = New System.Drawing.Size(121, 21)
+        Me.cmbLayers.Size = New System.Drawing.Size(194, 21)
         Me.cmbLayers.TabIndex = 0
         '
         'Label1
@@ -53,7 +55,7 @@ Partial Class frmRestaurantsViewer
         '
         'btnShow
         '
-        Me.btnShow.Location = New System.Drawing.Point(262, 40)
+        Me.btnShow.Location = New System.Drawing.Point(323, 40)
         Me.btnShow.Name = "btnShow"
         Me.btnShow.Size = New System.Drawing.Size(75, 23)
         Me.btnShow.TabIndex = 2
@@ -62,7 +64,7 @@ Partial Class frmRestaurantsViewer
         '
         'btnHide
         '
-        Me.btnHide.Location = New System.Drawing.Point(358, 40)
+        Me.btnHide.Location = New System.Drawing.Point(419, 40)
         Me.btnHide.Name = "btnHide"
         Me.btnHide.Size = New System.Drawing.Size(75, 23)
         Me.btnHide.TabIndex = 3
@@ -71,7 +73,7 @@ Partial Class frmRestaurantsViewer
         '
         'btnRestaurants
         '
-        Me.btnRestaurants.Location = New System.Drawing.Point(32, 97)
+        Me.btnRestaurants.Location = New System.Drawing.Point(32, 135)
         Me.btnRestaurants.Name = "btnRestaurants"
         Me.btnRestaurants.Size = New System.Drawing.Size(75, 23)
         Me.btnRestaurants.TabIndex = 4
@@ -81,7 +83,7 @@ Partial Class frmRestaurantsViewer
         '
         'btnBars
         '
-        Me.btnBars.Location = New System.Drawing.Point(113, 97)
+        Me.btnBars.Location = New System.Drawing.Point(113, 135)
         Me.btnBars.Name = "btnBars"
         Me.btnBars.Size = New System.Drawing.Size(75, 23)
         Me.btnBars.TabIndex = 5
@@ -91,7 +93,7 @@ Partial Class frmRestaurantsViewer
         '
         'btnLounges
         '
-        Me.btnLounges.Location = New System.Drawing.Point(194, 97)
+        Me.btnLounges.Location = New System.Drawing.Point(194, 135)
         Me.btnLounges.Name = "btnLounges"
         Me.btnLounges.Size = New System.Drawing.Size(75, 23)
         Me.btnLounges.TabIndex = 6
@@ -101,7 +103,7 @@ Partial Class frmRestaurantsViewer
         '
         'btnDiners
         '
-        Me.btnDiners.Location = New System.Drawing.Point(275, 97)
+        Me.btnDiners.Location = New System.Drawing.Point(275, 135)
         Me.btnDiners.Name = "btnDiners"
         Me.btnDiners.Size = New System.Drawing.Size(75, 23)
         Me.btnDiners.TabIndex = 7
@@ -111,7 +113,7 @@ Partial Class frmRestaurantsViewer
         '
         'btnCafes
         '
-        Me.btnCafes.Location = New System.Drawing.Point(356, 97)
+        Me.btnCafes.Location = New System.Drawing.Point(356, 135)
         Me.btnCafes.Name = "btnCafes"
         Me.btnCafes.Size = New System.Drawing.Size(75, 23)
         Me.btnCafes.TabIndex = 8
@@ -119,11 +121,30 @@ Partial Class frmRestaurantsViewer
         Me.btnCafes.Text = "Cafes"
         Me.btnCafes.UseVisualStyleBackColor = True
         '
+        'cmbVenues
+        '
+        Me.cmbVenues.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbVenues.FormattingEnabled = True
+        Me.cmbVenues.Location = New System.Drawing.Point(101, 79)
+        Me.cmbVenues.Name = "cmbVenues"
+        Me.cmbVenues.Size = New System.Drawing.Size(194, 21)
+        Me.cmbVenues.TabIndex = 9
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(29, 82)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(43, 13)
+        Me.Label2.TabIndex = 1
+        Me.Label2.Text = "Venues"
+        '
         'frmRestaurantsViewer
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(523, 262)
+        Me.Controls.Add(Me.cmbVenues)
         Me.Controls.Add(Me.btnCafes)
         Me.Controls.Add(Me.btnDiners)
         Me.Controls.Add(Me.btnLounges)
@@ -131,6 +152,7 @@ Partial Class frmRestaurantsViewer
         Me.Controls.Add(Me.btnRestaurants)
         Me.Controls.Add(Me.btnHide)
         Me.Controls.Add(Me.btnShow)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.cmbLayers)
         Me.Name = "frmRestaurantsViewer"
@@ -148,4 +170,6 @@ Partial Class frmRestaurantsViewer
     Friend WithEvents btnLounges As System.Windows.Forms.Button
     Friend WithEvents btnDiners As System.Windows.Forms.Button
     Friend WithEvents btnCafes As System.Windows.Forms.Button
+    Friend WithEvents cmbVenues As System.Windows.Forms.ComboBox
+    Friend WithEvents Label2 As System.Windows.Forms.Label
 End Class

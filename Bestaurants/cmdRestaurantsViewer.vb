@@ -5,6 +5,7 @@ Imports ESRI.ArcGIS.ADF.CATIDs
 Imports ESRI.ArcGIS.Framework
 Imports ESRI.ArcGIS.ArcMapUI
 Imports ESRI.ArcGIS.Carto
+Imports System.Windows.Forms
 
 <ComClass(cmdRestaurantsViewer.ClassId, cmdRestaurantsViewer.InterfaceId, cmdRestaurantsViewer.EventsId), _
  ProgId("Bestaurants.cmdRestaurantsViewer")> _
@@ -99,13 +100,18 @@ Public NotInheritable Class cmdRestaurantsViewer
     End Sub
 
     Public Overrides Sub OnClick()
-        'TODO: Add cmdRestaurantsViewer.OnClick implementation
+        Try
+
+            'TODO: Add cmdRestaurantsViewer.OnClick implementation
         Dim pRestaurantsViewer As New frmRestaurantsViewer
 
         pRestaurantsViewer.ArcMapApplication = m_application
 
+        Dim pArcMapApplication As New ArcMapWrapper
+            pArcMapApplication.ArcMapApplication = m_application
+
         'show the form
-        pRestaurantsViewer.Show()
+            pRestaurantsViewer.Show(pArcMapApplication)
 
         'Iapplication -> Imxdocument -> Imap ->Ilayer
         Dim pMxDoc As IMxDocument = m_application.Document
@@ -122,10 +128,34 @@ Public NotInheritable Class cmdRestaurantsViewer
             pRestaurantsViewer.cmbLayers.Items.Add(pLayer.Name)
         Next
 
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
 
 
 
     End Sub
+End Class
+
+Public Class ArcMapWrapper
+    Implements IWin32Window
+
+    Private m_application As IApplication
+    Public Property ArcMapApplication() As IApplication
+        Get
+            Return m_application
+        End Get
+        Set(ByVal value As IApplication)
+            m_application = value
+        End Set
+    End Property
+
+
+    Public ReadOnly Property Handle As IntPtr Implements IWin32Window.Handle
+        Get
+            Return New IntPtr(m_application.hWnd)
+        End Get
+    End Property
 End Class
 
 
