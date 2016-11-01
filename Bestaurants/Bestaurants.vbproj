@@ -220,6 +220,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -238,6 +239,13 @@
   <ItemGroup>
     <Compile Include="BestaurantToolbar.vb" />
     <Compile Include="cmdLoadData.vb" />
+    <Compile Include="cmdRestaurantsViewer.vb" />
+    <Compile Include="frmRestaurantsViewer.Designer.vb">
+      <DependentUpon>frmRestaurantsViewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmRestaurantsViewer.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -255,6 +263,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmRestaurantsViewer.resx">
+      <DependentUpon>frmRestaurantsViewer.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -292,6 +303,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="cmdLoadData.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cmdRestaurantsViewer.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -64,6 +64,7 @@ Public NotInheritable Class BestaurantToolbar
     ' via CreateObject.
     Public Sub New()
         AddItem("Bestaurants.cmdLoadData")
+        AddItem("Bestaurants.cmdRestaurantsViewer")
         '
         'TODO: Define your toolbar here by adding items
         '
