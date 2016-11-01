@@ -57,4 +57,23 @@ Public Class frmRestaurantsViewer
 
 
     End Function
+
+    Private Sub btnRestaurants_Click(sender As Object, e As EventArgs) Handles btnRestaurants.Click, btnBars.Click, btnCafes, btnDiners, btnLounges
+        Dim pButton As Windows.Forms.Button = sender
+
+        setDefinitionQuery(pButton.Tag)
+
+
+    End Sub
+
+
+
+    Private Function setDefinitionQuery(categorycode As Integer)
+        Dim pSelectedLayer As ILayer = getLayerByName(cmbLayers.SelectedItem.ToString)
+        Dim pFLayerDef As IFeatureLayerDefinition = pSelectedLayer
+        pFLayerDef.DefinitionExpression = "CATEGORY = " & categorycode
+        Dim pMxDoc As IMxDocument = m_application.Document
+        pMxDoc.UpdateContents()
+        pMxDoc.ActivatedView.Refresh()
+    End Function
 End Class
