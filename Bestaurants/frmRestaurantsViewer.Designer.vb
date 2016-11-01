@@ -33,6 +33,8 @@ Partial Class frmRestaurantsViewer
         Me.btnCafes = New System.Windows.Forms.Button()
         Me.cmbVenues = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'cmbLayers
@@ -73,7 +75,7 @@ Partial Class frmRestaurantsViewer
         '
         'btnRestaurants
         '
-        Me.btnRestaurants.Location = New System.Drawing.Point(32, 135)
+        Me.btnRestaurants.Location = New System.Drawing.Point(20, 21)
         Me.btnRestaurants.Name = "btnRestaurants"
         Me.btnRestaurants.Size = New System.Drawing.Size(75, 23)
         Me.btnRestaurants.TabIndex = 4
@@ -83,7 +85,7 @@ Partial Class frmRestaurantsViewer
         '
         'btnBars
         '
-        Me.btnBars.Location = New System.Drawing.Point(113, 135)
+        Me.btnBars.Location = New System.Drawing.Point(101, 21)
         Me.btnBars.Name = "btnBars"
         Me.btnBars.Size = New System.Drawing.Size(75, 23)
         Me.btnBars.TabIndex = 5
@@ -93,7 +95,7 @@ Partial Class frmRestaurantsViewer
         '
         'btnLounges
         '
-        Me.btnLounges.Location = New System.Drawing.Point(194, 135)
+        Me.btnLounges.Location = New System.Drawing.Point(182, 21)
         Me.btnLounges.Name = "btnLounges"
         Me.btnLounges.Size = New System.Drawing.Size(75, 23)
         Me.btnLounges.TabIndex = 6
@@ -103,7 +105,7 @@ Partial Class frmRestaurantsViewer
         '
         'btnDiners
         '
-        Me.btnDiners.Location = New System.Drawing.Point(275, 135)
+        Me.btnDiners.Location = New System.Drawing.Point(263, 21)
         Me.btnDiners.Name = "btnDiners"
         Me.btnDiners.Size = New System.Drawing.Size(75, 23)
         Me.btnDiners.TabIndex = 7
@@ -113,7 +115,7 @@ Partial Class frmRestaurantsViewer
         '
         'btnCafes
         '
-        Me.btnCafes.Location = New System.Drawing.Point(356, 135)
+        Me.btnCafes.Location = New System.Drawing.Point(344, 21)
         Me.btnCafes.Name = "btnCafes"
         Me.btnCafes.Size = New System.Drawing.Size(75, 23)
         Me.btnCafes.TabIndex = 8
@@ -125,7 +127,7 @@ Partial Class frmRestaurantsViewer
         '
         Me.cmbVenues.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbVenues.FormattingEnabled = True
-        Me.cmbVenues.Location = New System.Drawing.Point(101, 79)
+        Me.cmbVenues.Location = New System.Drawing.Point(101, 179)
         Me.cmbVenues.Name = "cmbVenues"
         Me.cmbVenues.Size = New System.Drawing.Size(194, 21)
         Me.cmbVenues.TabIndex = 9
@@ -133,23 +135,33 @@ Partial Class frmRestaurantsViewer
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(29, 82)
+        Me.Label2.Location = New System.Drawing.Point(29, 182)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(43, 13)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Venues"
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.btnRestaurants)
+        Me.GroupBox1.Controls.Add(Me.btnBars)
+        Me.GroupBox1.Controls.Add(Me.btnCafes)
+        Me.GroupBox1.Controls.Add(Me.btnLounges)
+        Me.GroupBox1.Controls.Add(Me.btnDiners)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 73)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(499, 64)
+        Me.GroupBox1.TabIndex = 10
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Category"
         '
         'frmRestaurantsViewer
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(523, 262)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.cmbVenues)
-        Me.Controls.Add(Me.btnCafes)
-        Me.Controls.Add(Me.btnDiners)
-        Me.Controls.Add(Me.btnLounges)
-        Me.Controls.Add(Me.btnBars)
-        Me.Controls.Add(Me.btnRestaurants)
         Me.Controls.Add(Me.btnHide)
         Me.Controls.Add(Me.btnShow)
         Me.Controls.Add(Me.Label2)
@@ -157,6 +169,7 @@ Partial Class frmRestaurantsViewer
         Me.Controls.Add(Me.cmbLayers)
         Me.Name = "frmRestaurantsViewer"
         Me.Text = "frmRestaurantsViewer"
+        Me.GroupBox1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -172,4 +185,5 @@ Partial Class frmRestaurantsViewer
     Friend WithEvents btnCafes As System.Windows.Forms.Button
     Friend WithEvents cmbVenues As System.Windows.Forms.ComboBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
 End Class
